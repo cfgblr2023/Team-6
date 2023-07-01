@@ -11,6 +11,7 @@ urlpatterns = [
     path('loginAdmin/',view=loginAdmin),
     path('registerMentee/',view=registerMentee),
     path('registerMentor/',view=registerMentor),
+    path('registerAdmin/',view=registerAdmin),
     path('mentor/',view=mentor),
     path('mentee/',view=mentee),
     path('admin/',view=adminUser),

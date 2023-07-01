@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class User(models.Model):
+class EndUser(models.Model):
     Username= models.CharField(max_length=25)
     Name= models.CharField(max_length=25)
     Password= models.CharField(max_length=100)
@@ -14,3 +14,10 @@ class Course(models.Model):
     CourseName = models.CharField(max_length=25)
     CourseCategory = models.CharField(max_length=25)
     CourseDescription = models.CharField(max_length=100)
+    CourseMentor = models.CharField(max_length=25)
+    CourseMentee = models.CharField(max_length=25)
+
+class CourseRelation(models.Model):
+    Mentor = models.CharField(max_length=25)
+    Mentee = models.CharField(max_length=25)
+    CourseStatus = models.CharField(max_length=1)
