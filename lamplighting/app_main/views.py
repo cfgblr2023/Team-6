@@ -51,6 +51,9 @@ def donate(request):
 def jobPosting(request):
     return render(request,"")
 
+def adminbase(request):
+    return render(request, "adminbase.html")
+
 
 
 

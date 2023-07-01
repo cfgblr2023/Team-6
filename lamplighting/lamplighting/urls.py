@@ -29,6 +29,7 @@ urlpatterns = [
     path('mentee/',view=mentee),
     path('admin/',view=adminUser),
     path('donate/',view=donate),
-    path('jobPosting',view=jobPosting)
+    path('jobPosting',view=jobPosting),
+    path('adminbase/',view=adminbase)
 
 ]
