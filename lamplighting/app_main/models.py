@@ -16,10 +16,10 @@ class Course(models.Model):
     CourseDescription = models.CharField(max_length=100)
     CourseFeedback = models.CharField(max_length=25,default="NA")
     CourseMentor = models.CharField(max_length=25)
-    CourseMentee = models.CharField(max_length=25)
-    VideoLink = models.CharField(max_length=100)
-    ResourcesLink = models.CharField(max_length=100)
+    VideoLink = models.CharField(max_length=100,default="NA")
+    ResourcesLink = models.CharField(max_length=100,default="NA")
 
 class CourseRelation(models.Model):
-    Mentor = models.CharField(max_length=25)
+    CourseID = models.CharField(max_length=25)
     Mentee = models.CharField(max_length=25)
+    unique_together = (('CourseID', 'Mentee'))

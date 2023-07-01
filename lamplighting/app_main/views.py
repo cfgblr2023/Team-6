@@ -2,25 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from .models import EndUser
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        try:
-            user = EndUser.objects.get(Username=username, Password=password)
-            request.session.flush()
-            request.session['user_id'] = user.id
-            # You can add any additional session data here if needed
-            return HttpResponse("Success")
-        except EndUser.DoesNotExist:
-            # Authentication failed
-            return HttpResponse("Failure")
-
-            # messages.error(request, 'Invalid username or password.')
-
-    return render(request, 'home.html')
+from .models import *
 
 # Create your views here.
 
@@ -46,7 +28,15 @@ def registerMentor(request):
     return render(request,"Mentor/mentor_registration.html")
 
 def mentor(request):
-    return render(request,"Mentor/mentorbase.html")
+    username=""
+    with open("temp.txt") as f:
+        username=f.read()
+    numberOfCourses=len(Course.objects.filter(CourseMentor=username))
+    numberOfMentees=len(Course.objects.filter(CourseMentor=username))
+    data={
+        "numberOfCourses":numberOfCourses
+    }
+    return render(request,"Mentor/mentorbase.html",data)
 
 def mentee(request):
     return render(request,"mentee/mentee.html")
@@ -65,11 +55,31 @@ def logoutUser(request):
     return HttpResponse("Logged out")
     return redirect('home')
 
+def writeLogin(username):
+    with open('temp.txt','w') as f:
+        f.write(username)
 
 
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        writeLogin(username)
+        user = authenticate(request, username=username, password=password)
+        try:
+            user = EndUser.objects.get(Username=username, Password=password)
+            request.session['user_id']=user.id
+            # You can add any additional session data here if needed
+            if(user.Permission=='m'):
+                return redirect('/mentor/')
+            if(user.Permission=='a'):
+                return redirect('/adminbase/')
+            return redirect('/mentee/')
+            
+        except EndUser.DoesNotExist:
+            # Authentication failed
+            return redirect('/home/')
 
 
-
-
-
+            # messages.error(request, 'Invalid username or password.')
 
