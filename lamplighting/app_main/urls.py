@@ -6,6 +6,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('home/', view=home),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-if settings.DEBUG:
-    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('loginMentee/',view=loginMentee),
+    path('loginMentor/',view=loginMentor),
+    path('loginAdmin/',view=loginAdmin),
+    path('registerMentee/',view=registerMentee),
+    path('registerMentor/',view=registerMentor),
+    path('registerAdmin/',view=registerAdmin),
+    path('mentor/',view=mentor),
+    path('mentee/',view=mentee),
+    path('admin/',view=adminUser),
+    path('donate/',view=donate),
+    path('jobPosting/',view=jobPosting)
+]
