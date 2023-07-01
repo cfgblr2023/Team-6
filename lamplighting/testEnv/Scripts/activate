@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\JPMC CFG2023\Team-6\lamplighting\testEnv"
+VIRTUAL_ENV="D:\JPMC\Team-6\lamplighting\testEnv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
