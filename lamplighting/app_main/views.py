@@ -11,9 +11,12 @@ def login_view(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page
+            return HttpResponse("Success")
         else:
             # Show an error message
-            return render(request, 'accounts/login.html', {'error': 'Invalid username or password.'})
+            return HttpResponse("Failure")
+
+            # return render(request, 'accounts/login.html', {'error': 'Invalid username or password.'})
     return render(request, 'accounts/login.html')
 
 # Create your views here.
