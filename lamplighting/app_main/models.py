@@ -14,10 +14,11 @@ class Course(models.Model):
     CourseName = models.CharField(max_length=25)
     CourseCategory = models.CharField(max_length=25)
     CourseDescription = models.CharField(max_length=100)
+    CourseFeedback = models.CharField(max_length=25)
     CourseMentor = models.CharField(max_length=25)
     CourseMentee = models.CharField(max_length=25)
+    Skills = models.CharField(max_length=100)
 
 class CourseRelation(models.Model):
     Mentor = models.CharField(max_length=25)
     Mentee = models.CharField(max_length=25)
-    CourseStatus = models.CharField(max_length=1)
