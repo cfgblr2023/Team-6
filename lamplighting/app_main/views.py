@@ -60,6 +60,9 @@ def donate(request):
 def jobPosting(request):
     return render(request,"")
 
+def video(request):
+    return render(request,"mentee/video.html")
+
 
 
 
