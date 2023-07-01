@@ -1,44 +1,50 @@
 <nav class=" navbar navbar-expand-lg navbar-dark  ">
     <a class="navbar-brand" href="#">
-        <img width="25%" height="13%" src="https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1-110x110.png" class="attachment-large size-large wp-image-2474" alt="LEACT Logo" decoding="async" loading="lazy" srcset="https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1.png 1x, https://lampeducationtrust.com/wp-content/uploads/2020/01/logo@2x.png 2x" sizes="(max-width: 500px) 100vw, 500px">
+        <img width="25%" height="13%"
+            src="https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1-110x110.png"
+            class="attachment-large size-large wp-image-2474" alt="LEACT Logo" decoding="async" loading="lazy"
+            srcset="https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1.png 1x, https://lampeducationtrust.com/wp-content/uploads/2020/01/logo@2x.png 2x"
+            sizes="(max-width: 500px) 100vw, 500px">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="google_translate_element"></div>
- 
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
-                {pageLanguage: 'en'},
+                { pageLanguage: 'en' },
                 'google_translate_element'
             );
         }
     </script>
- 
-    <script type="text/javascript"
-            src=
-"https://translate.google.com/translate_a/element.js?
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">
-    </script>
+</script>
     <div class="collapse navbar-collapse" id="navbarNav">
-        
+
         <ul class="navbar-nav ml-auto">
             <li class=" nav-item active item">
                 <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="item nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="https://lampeducationtrust.com/about/">About</a>
             </li>
             <li class="item nav-item">
                 <a class="nav-link" href="https://pages.razorpay.com/studycenter">Donate Us</a>
             </li>
             <li class="item nav-item">
-                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link" href="https://lampeducationtrust.com/sports-academy/">Events</a>
             </li>
             <li class="item nav-item">
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="/logoutUser">Logout</a>
+                {% else %}
                 <a class="nav-link" href="/loginUser">Login/Signup</a>
+                {% endif %}
             </li>
         </ul>
     </div>

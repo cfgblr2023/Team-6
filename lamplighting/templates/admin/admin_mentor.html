@@ -13,10 +13,9 @@
         body {
             height: 100%;
             position: relative;
-            background-color: beige;
         }
 
-        /* body::before {
+        body::before {
             content: "";
             position: absolute;
             top: 0;
@@ -28,7 +27,7 @@
             background-size: cover;
             opacity: 0.7;
             z-index: -1;
-        } */
+        }
 
         .wrapper {
             min-height: 100%;
@@ -53,7 +52,7 @@
             background-color: rgb(16, 121, 159);
             margin-left: 20px;
             border-radius: 40px;
-            width: 200px;
+            width: 150px;
             text-align: center;
             font-size: larger;
             font-weight: 700;
@@ -104,39 +103,38 @@
         <div class="content">
             <div class="container mt-5">
                 <div class="row">
-
-                    <!-- Center Content -->
-                    <div class="container row align-items-center p-5">
-
-                        <!-- <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/backgroundImageHome.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Admin Login</h5>
-                                <p class="card-text">If you wish to manage internal functioning.</p>
-                                <a href="/loginAdmin" class="btn btn-primary">Login</a>
-                            </div>
-                        </div> -->
-                        <div class="card p-4" style="width: 50rem;">
-                            <form method="post" action="login_view">
-                                {% csrf_token %}
-                                <div class="h2">
-                                    Login as Mentor
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                  <input  class="form-control" name="username" id="exampleInputEmail" aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                                  <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-                                </div>                                
-                                <button type="submit" class="btn btn-primary">Login</button>
-                                <br>
-                                <br>
-                                <a href="/registerMentor">Don't have an account? Sign up</a>
-                              </form>
-                        </div>
+                    <div class="panel-heading" style="display: flex;justify-content: center;height:20px;margin-top:-30px;margin-bottom:-5px;">
+                        <h3 class="panel-title" style="text-align:center;font-family: 'Times New Roman', Times, serif;font-weight: bold;color: darkblue;">Mentors</h3>
                     </div>
+                      <div class="outer-wrapper" style="display: flex;justify-content: center;">
+                        <div class="table-wrapper">
+                          <table class="table">
+                            <thead>
+                                <th id="t">Name</th>
+                                
+                                
+                                <th id="t">Email</th>
+                                <th id="t">Mobile</th>
+                            </thead>
+                            <tbody>
+                              {% for i in list %}
+                              <tr>
+                        
+                                <td style="text-align:center;">{{i.name}}</td>
+                                
+                                
+                                <td style="text-align:center;"> {{i.email}}</td>
+                                <td style="text-align:center;">{{i.mobile}}</td>
+                                
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    
 
                 </div>
             </div>

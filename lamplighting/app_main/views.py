@@ -1,26 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from .models import EndUser
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        try:
-            user = EndUser.objects.get(Username=username, Password=password)
-            # Authentication successful
-            request.session['user_id'] = user.id
-            # You can add any additional session data here if needed
-            return HttpResponse("Success")
-        except EndUser.DoesNotExist:
-            # Authentication failed
-            return HttpResponse("Failure")
-
-            # messages.error(request, 'Invalid username or password.')
-
-    return render(request, 'home.html')
+from .models import *
 
 # Create your views here.
 
@@ -40,19 +22,27 @@ def loginAdmin(request):
     return render(request,"admin_login.html")
 
 def registerMentee(request):
-    return render(request,"mentee/mentee_register.html")
+    return render(request,"mentee/mentee_registration.html")
 
 def registerMentor(request):
-    return render(request,"Mentor/mentor_register.html")
+    return render(request,"Mentor/mentor_registration.html")
 
 def mentor(request):
-    return render(request,"mentor.html")
+    username=""
+    with open("temp.txt") as f:
+        username=f.read()
+    numberOfCourses=len(Course.objects.filter(CourseMentor=username))
+    numberOfMentees=len(Course.objects.filter(CourseMentor=username))
+    data={
+        "numberOfCourses":numberOfCourses
+    }
+    return render(request,"Mentor/mentorbase.html",data)
 
 def mentee(request):
     return render(request,"mentee/mentee.html")
 
 def adminUser(request):
-    return render(request,"admin.html")
+    return render(request,"admin/adminbase.html")
 
 def donate(request):
     return render(request,"")
@@ -63,8 +53,36 @@ def jobPosting(request):
 def video(request):
     return render(request,"mentee/video.html")
 
+def logoutUser(request):
+    request.session.flush()
+    return HttpResponse("Logged out")
+    return redirect('home')
+
+def writeLogin(username):
+    with open('temp.txt','w') as f:
+        f.write(username)
 
 
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        writeLogin(username)
+        user = authenticate(request, username=username, password=password)
+        try:
+            user = EndUser.objects.get(Username=username, Password=password)
+            request.session['user_id']=user.id
+            # You can add any additional session data here if needed
+            if(user.Permission=='m'):
+                return redirect('/mentor/')
+            if(user.Permission=='a'):
+                return redirect('/adminbase/')
+            return redirect('/mentee/')
+            
+        except EndUser.DoesNotExist:
+            # Authentication failed
+            return redirect('/home/')
 
 
+            # messages.error(request, 'Invalid username or password.')
 
