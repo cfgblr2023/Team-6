@@ -28,7 +28,7 @@ def home(request):
     return render(request, "home.html")
 
 def loginUser(request):
-    return render(request,"loginUser.html")
+    return render(request, "loginUser.html")
 
 def loginMentee(request):
     return render(request,"mentee/mentee_login.html")
@@ -37,7 +37,7 @@ def loginMentor(request):
     return render(request,"Mentor/mentor_login.html")
 
 def loginAdmin(request):
-    return render(request,"Admin/admin_login.html")
+    return render(request,"admin_login.html")
 
 def registerMentee(request):
     return render(request,"mentee/mentee_register.html")
@@ -49,10 +49,10 @@ def mentor(request):
     return render(request,"mentor.html")
 
 def mentee(request):
-    return render(request,"mentee.html")
+    return render(request,"mentee/mentee.html")
 
 def adminUser(request):
-    return render(request,"admin.html")
+    return render(request,"admin/adminbase.html")
 
 def donate(request):
     return render(request,"")
