@@ -8,3 +8,9 @@ class User(models.Model):
     PhoneNumber= models.IntegerField(max_length=10)
     Permission= models.CharField(max_length=25)
     Email= models.CharField(max_length=25)
+
+class Course(models.Model):
+    CourseID = models.CharField(max_length=25, primary_key=True)
+    CourseName = models.CharField(max_length=25)
+    CourseCategory = models.CharField(max_length=25)
+    CourseDescription = models.CharField(max_length=100)
