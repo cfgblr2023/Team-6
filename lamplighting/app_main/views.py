@@ -27,20 +27,23 @@ def login_view(request):
 def home(request):
     return render(request, "home.html")
 
+def loginUser(request):
+    return render(request, "loginUser.html")
+
 def loginMentee(request):
-    return render(request,"mentee_login.html")
+    return render(request,"mentee/mentee_login.html")
 
 def loginMentor(request):
-    return render(request,"mentor_login.html")
+    return render(request,"Mentor/mentor_login.html")
 
 def loginAdmin(request):
     return render(request,"admin_login.html")
 
 def registerMentee(request):
-    return render(request,"mentee_register.html")
+    return render(request,"mentee/mentee_register.html")
 
 def registerMentor(request):
-    return render(request,"mentor_register.html")
+    return render(request,"Mentor/mentor_register.html")
 
 def mentor(request):
     return render(request,"mentor.html")
