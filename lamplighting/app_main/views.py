@@ -2,19 +2,25 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-
+from .models import EndUser
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            # Redirect to a success page
-        else:
-            # Show an error message
-            return render(request, 'accounts/login.html', {'error': 'Invalid username or password.'})
-    return render(request, 'accounts/login.html')
+        try:
+            user = EndUser.objects.get(Username=username, Password=password)
+            # Authentication successful
+            request.session['user_id'] = user.id
+            # You can add any additional session data here if needed
+            return HttpResponse("Success")
+        except EndUser.DoesNotExist:
+            # Authentication failed
+            return HttpResponse("Failure")
+
+            # messages.error(request, 'Invalid username or password.')
+
+    return render(request, 'home.html')
 
 # Create your views here.
 
