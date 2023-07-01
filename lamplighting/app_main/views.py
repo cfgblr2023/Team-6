@@ -46,7 +46,7 @@ def registerMentor(request):
     return render(request,"Mentor/mentor_registration.html")
 
 def mentor(request):
-    return render(request,"mentor.html")
+    return render(request,"Mentor/mentorbase.html")
 
 def mentee(request):
     return render(request,"mentee/mentee.html")
