@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 #Virtual Env
-lamplighting/testEnv
+lamplighting/testEnv/
+testEnv/
