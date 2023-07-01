@@ -40,19 +40,19 @@ def loginAdmin(request):
     return render(request,"admin_login.html")
 
 def registerMentee(request):
-    return render(request,"mentee/mentee_register.html")
+    return render(request,"mentee/mentee_registration.html")
 
 def registerMentor(request):
-    return render(request,"Mentor/mentor_register.html")
+    return render(request,"Mentor/mentor_registration.html")
 
 def mentor(request):
-    return render(request,"mentor.html")
+    return render(request,"Mentor/mentorbase.html")
 
 def mentee(request):
     return render(request,"mentee/mentee.html")
 
 def adminUser(request):
-    return render(request,"admin.html")
+    return render(request,"admin/adminbase.html")
 
 def donate(request):
     return render(request,"")

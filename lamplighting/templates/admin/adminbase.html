@@ -108,35 +108,46 @@
                     <!-- Center Content -->
                     <div class="container row align-items-center p-5">
 
-                        <!-- <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/backgroundImageHome.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'assets/admins_mentee.png' %}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Admin Login</h5>
-                                <p class="card-text">If you wish to manage internal functioning.</p>
-                                <a href="/loginAdmin" class="btn btn-primary">Login</a>
+                                <h5 class="card-title">Total Mentees</h5>
+                                <p class="card-text">Total mentees in various courses provided.</p>
+                                <a href="/loginAdmin" class="btn btn-primary">See List</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'assets/admins_mentor.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Mentors</h5>
+                                <p class="card-text">Total mentors in various courses.</p>
+                                <a href="/loginMentor" class="btn btn-primary">See List</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'assets/admin_course.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Courses</h5>
+                                <p class="card-text">Total courses provided.</p>
+                                <a href="/loginMentee" class="btn btn-primary">See List</a>
+                            </div>
+                        </div>
+                        <!-- <div class="card" style="width: 18rem;">
+                            <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Events</h5>
+                                <p class="card-text">Total events organized.</p>
+                                <a href="/loginMentee" class="btn btn-primary">See List</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Jobs</h5>
+                                <p class="card-text">Total jobs available.</p>
+                                <a href="/loginMentee" class="btn btn-primary">See List</a>
                             </div>
                         </div> -->
-                        <div class="card p-4" style="width: 50rem;">
-                            <form method="post" action="login_view">
-                                {% csrf_token %}
-                                <div class="h2">
-                                    Login as Mentee
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                
-                                <button type="submit" class="btn btn-primary">Login</button>
-                                <br>
-                                <br>
-                                <a href="/registerMentee">Don't have an account? Sign up</a>
-                              </form>
-                        </div>
                     </div>
 
                 </div>
