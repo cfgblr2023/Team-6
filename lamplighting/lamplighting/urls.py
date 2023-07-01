@@ -23,6 +23,8 @@ urlpatterns = [
     path('loginUser/',view=loginUser),
     path('loginMentee/',view=loginMentee),
     path('loginMentor/',view=loginMentor),
+    path('loginMentee/login_view',view=login_view),
+    path('loginMentor/login_view',view=login_view),
     path('loginAdmin/',view=loginAdmin),
     path('registerMentee/',view=registerMentee),
     path('registerMentor/',view=registerMentor),
@@ -31,6 +33,6 @@ urlpatterns = [
     path('admin/',view=adminUser),
     path('donate/',view=donate),
     path('jobPosting',view=jobPosting),
-    path('adminbase/',view=adminbase)
+    # path('adminbase/',view=adminbase)
 
 ]

@@ -8,7 +8,8 @@ urlpatterns = [
     path('home/', view=home),
     path('login/',view=login),
     path('loginMentee/',view=loginMentee),
-    path('loginMentor/',view=loginMentor),
+    path('loginMentee/login_view',view=login_view),
+    path('loginMentor/login_view',view=login_view),
     path('loginAdmin/',view=loginAdmin),
     path('registerMentee/',view=registerMentee),
     path('registerMentor/',view=registerMentor),
@@ -16,6 +17,6 @@ urlpatterns = [
     path('mentee/',view=mentee),
     path('admin/',view=adminUser),
     path('donate/',view=donate),
-    path('jobPosting/',view=jobPosting)
+    path('jobPosting/',view=jobPosting),
     path('adminbase/',view=adminbase)
 ]
