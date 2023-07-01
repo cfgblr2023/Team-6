@@ -14,7 +14,7 @@ class Course(models.Model):
     CourseName = models.CharField(max_length=25)
     CourseCategory = models.CharField(max_length=25)
     CourseDescription = models.CharField(max_length=100)
-    CourseFeedback = models.CharField(max_length=25)
+    CourseFeedback = models.CharField(max_length=25,default="NA")
     CourseMentor = models.CharField(max_length=25)
     CourseMentee = models.CharField(max_length=25)
 

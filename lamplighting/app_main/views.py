@@ -40,7 +40,7 @@ def mentor(request):
     return render(request,"mentor.html")
 
 def mentee(request):
-    return render(request,"mentee.html")
+    return render(request,"mentee/mentee.html")
 
 def adminUser(request):
     return render(request,"admin.html")
