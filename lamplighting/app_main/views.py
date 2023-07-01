@@ -46,7 +46,7 @@ def mentee(request):
     return render(request,"mentee.html")
 
 def adminUser(request):
-    return render(request,"admin.html")
+    return render(request,"admin/adminbase.html")
 
 def donate(request):
     return render(request,"")

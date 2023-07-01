@@ -73,6 +73,7 @@
             .form-control{
                 text-align: center;
             }
+            
             .mt-2
             {
                 color:black;
@@ -83,7 +84,7 @@
             }
         </style>
     </head>
-    <body style="background:linear-gradient(to bottom, #76f1f1, #11349c);">
+    <body style="background:linear-gradient(to bottom, #394646, #0a0a0a);">
             <div class="container py-5" style="overflow-y: hidden;">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col col-xl-10 ">
@@ -92,9 +93,10 @@
                                 <div class="col-md-6 col-lg-5 d-none d-md-block">
                                 </div>
                                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div class="card-body p-4 p-lg-5 text-black">
-                                        <form action="." method="POST">
-                                            <div class="d-flex align-items-center mb-3 pb-1">
+                                    <div style="width: 300px; height: 200px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-image: url('background.jpg'); background-size: cover; background-position: center;">
+                                        <div style="padding: 20px; color: #fff;">
+                                          <h2>Card Title</h2>
+                                          <div class="d-flex align-items-center mb-3 pb-1">
                                             <img src="{% static 'assets/logo.png' %}" alt="Logo" width="90em" height="70em">
                                             <span class="h2 fw-bold mb-0">Lamp Educational and Charitable Trust</span>
                                             </div>
@@ -117,6 +119,11 @@
                                             <div class="pt-1 text-center">
                                             <button class="btn  btn-info btn-rounded btn-lg px-5 py-2" type="submit">Login</button>
                                             </div>
+                                        </div>
+                                      </div>
+                                    <div class="card-body p-4 p-lg-5 text-black">
+                                        <form action="." method="POST">
+                                           
                                             <!-- <div class="text-center mt-2">
                                                 <h5 class="text-center mt-2"><a href="">Forgot Password?</a></h5>
                                             </div> -->
