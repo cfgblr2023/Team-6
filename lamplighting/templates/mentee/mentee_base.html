@@ -13,22 +13,21 @@
         body {
             height: 100%;
             position: relative;
-            background-color: beige;
         }
 
-        /* body::before {
+        body::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("{% static 'assets/backgroundImageHome.jpg' %}");
+            /* background-image: url("{% static 'assets/backgroundImageHome.jpg' %}"); */
             background-repeat: no-repeat;
             background-size: cover;
             opacity: 0.7;
             z-index: -1;
-        } */
+        }
 
         .wrapper {
             min-height: 100%;
@@ -104,37 +103,10 @@
         <div class="content">
             <div class="container mt-5">
                 <div class="row">
-
-                    <!-- Center Content -->
-                    <div class="container row align-items-center p-5">
-
-                        <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/backgroundImageHome.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Admin Login</h5>
-                                <p class="card-text">If you wish to manage internal functioning.</p>
-                                <a href="/loginAdmin" class="btn btn-primary">Login</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/mentorLoginCardImage.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Mentor Login</h5>
-                                <p class="card-text">If you wish to manage classes, your mentees, and course materials.</p>
-                                <a href="/loginMentor" class="btn btn-primary">Login</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Mentee Login</h5>
-                                <p class="card-text">If you wish to manage courses, or check out your course materials course materials</p>
-                                <a href="/loginMentee" class="btn btn-primary">Login</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    <h2> Welcome { % mentee_name % }</h2>
                 </div>
+
+
             </div>
         </div>
 
