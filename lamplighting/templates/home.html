@@ -52,7 +52,7 @@
             background-color: rgb(16, 121, 159);
             margin-left: 20px;
             border-radius: 40px;
-            width: 200px;
+            width: 150px;
             text-align: center;
             font-size: larger;
             font-weight: 700;
@@ -95,6 +95,7 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
         <!-- Navbar -->
         {% include 'header.html' %}
@@ -113,11 +114,22 @@
         <!-- Footer -->
         {% include 'footer.html' %}
     </div>
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"584543fddf154f1fdee0cd7a0b68ea77","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+       </script> 
 
     <!-- Bootstrap JS Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 
 </body>
 
