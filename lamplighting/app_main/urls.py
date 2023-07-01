@@ -17,4 +17,5 @@ urlpatterns = [
     path('admin/',view=adminUser),
     path('donate/',view=donate),
     path('jobPosting/',view=jobPosting)
+    path('adminbase/',view=adminbase)
 ]
