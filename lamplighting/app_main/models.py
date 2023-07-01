@@ -20,4 +20,3 @@ class Course(models.Model):
 class CourseRelation(models.Model):
     Mentor = models.CharField(max_length=25)
     Mentee = models.CharField(max_length=25)
-    CourseStatus = models.CharField(max_length=1)
