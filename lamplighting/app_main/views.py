@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
@@ -10,7 +10,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         try:
             user = EndUser.objects.get(Username=username, Password=password)
-            # Authentication successful
+            request.session.flush()
             request.session['user_id'] = user.id
             # You can add any additional session data here if needed
             return HttpResponse("Success")
@@ -59,6 +59,14 @@ def donate(request):
 
 def jobPosting(request):
     return render(request,"")
+
+def logoutUser(request):
+    request.session.flush()
+    return HttpResponse("Logged out")
+    return redirect('home')
+
+
+
 
 
 
