@@ -20,16 +20,15 @@ from app_main.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', view=home),
-    # path('loginMentee/',view=loginMentee),
-    # path('loginMentor/',view=loginMentor),
-    # path('loginAdmin/',view=loginAdmin),
-    # path('registerMentee/',view=registerMentee),
-    # path('registerMentor/',view=registerMentor),
-    # path('registerAdmin/',view=registerAdmin),
-    # path('mentor/',view=mentor),
-    # path('mentee/',view=mentee),
-    # path('admin/',view=adminUser),
-    # path('donate/',view=donate),
-    # path('jobPosting',view=jobPosting)
+    path('loginMentee/',view=loginMentee),
+    path('loginMentor/',view=loginMentor),
+    path('loginAdmin/',view=loginAdmin),
+    path('registerMentee/',view=registerMentee),
+    path('registerMentor/',view=registerMentor),
+    path('mentor/',view=mentor),
+    path('mentee/',view=mentee),
+    path('admin/',view=adminUser),
+    path('donate/',view=donate),
+    path('jobPosting',view=jobPosting)
 
 ]
