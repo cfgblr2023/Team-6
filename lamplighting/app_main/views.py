@@ -40,10 +40,10 @@ def loginAdmin(request):
     return render(request,"admin_login.html")
 
 def registerMentee(request):
-    return render(request,"mentee/mentee_register.html")
+    return render(request,"mentee/mentee_registration.html")
 
 def registerMentor(request):
-    return render(request,"Mentor/mentor_register.html")
+    return render(request,"Mentor/mentor_registration.html")
 
 def mentor(request):
     return render(request,"mentor.html")
