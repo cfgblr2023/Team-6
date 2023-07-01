@@ -108,33 +108,47 @@
                     <!-- Center Content -->
                     <div class="container row align-items-center p-5">
 
-                        <!-- <div class="card" style="width: 18rem;">
-                            <img src="{% static 'assets/backgroundImageHome.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card" style="width: 13rem;">
+                            <img src="{% static 'assets/courses.jpg' %}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Admin Login</h5>
-                                <p class="card-text">If you wish to manage internal functioning.</p>
-                                <a href="/loginAdmin" class="btn btn-primary">Login</a>
+                                <h5 class="card-title">Total courses</h5>
+                                <p class="card-text">45</p>
+                                <!-- <a href="/loginAdmin" class="btn btn-primary">Login</a> -->
                             </div>
-                        </div> -->
-                        <div class="card p-4" style="width: 50rem;">
-                            <form method="post" action="login_view">
-                                {% csrf_token %}
-                                <div class="h2">
-                                    Login as Mentor
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>                                
-                                <button type="submit" class="btn btn-primary">Login</button>
-                                <br>
-                                <br>
-                                <a href="/registerMentor">Don't have an account? Sign up</a>
-                              </form>
+                        </div>
+                        <div class="card" style="width: 13rem;">
+                            <img src="{% static 'assets/Students.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Students</h5>
+                                <p class="card-text">100</p>
+                                <!-- <a href="/loginMentor" class="btn btn-primary">Login</a> -->
+                            </div>
+                        </div>
+                        <div class="card" style="width: 13rem;">
+                            <img src="{% static 'assets/upload.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Upload Video</h5>
+                                <!-- <p class="card-text">Upload new video for courses</p> -->
+                                <a href="/loginMentee" class="btn btn-primary">Upload</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="width: 13rem;">
+                            <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Upload Study material</h5>
+                                <!-- <p class="card-text">Upload the study material</p> -->
+                                <a href="/loginMentee" class="btn btn-primary">Upload</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="width: 13rem;">
+                            <img src="{% static 'assets/study.jpeg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">View uploaed videos</h5>
+                                <p class="card-text">view the videos</p>
+                                
+                            </div>
                         </div>
                     </div>
 

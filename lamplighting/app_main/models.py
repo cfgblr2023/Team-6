@@ -17,6 +17,8 @@ class Course(models.Model):
     CourseFeedback = models.CharField(max_length=25,default="NA")
     CourseMentor = models.CharField(max_length=25)
     CourseMentee = models.CharField(max_length=25)
+    VideoLink = models.CharField(max_length=100)
+    ResourcesLink = models.CharField(max_length=100)
 
 class CourseRelation(models.Model):
     Mentor = models.CharField(max_length=25)
