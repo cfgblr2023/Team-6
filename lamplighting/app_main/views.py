@@ -50,9 +50,3 @@ def donate(request):
 
 def jobPosting(request):
     return render(request,"")
-
-
-
-
-
-
