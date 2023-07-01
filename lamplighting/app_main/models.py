@@ -17,7 +17,6 @@ class Course(models.Model):
     CourseFeedback = models.CharField(max_length=25)
     CourseMentor = models.CharField(max_length=25)
     CourseMentee = models.CharField(max_length=25)
-    Skills = models.CharField(max_length=100)
 
 class CourseRelation(models.Model):
     Mentor = models.CharField(max_length=25)
