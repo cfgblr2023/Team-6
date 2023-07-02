@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" href="{% static 'css/style_login.css' %}" type="text/css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /*Google Font*/
+        /* /Google Font/ */
         @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Lobster+Two&family=Sniglet&display=swap');
         * {
             box-sizing: border-box;
@@ -42,15 +42,15 @@
             margin-block-start: -1.5rem;
         }
 
-        .container .pt-1 .btn:hover {
+        /* .container .pt-1 .btn:hover {
             transform: scale(1.2);
             transition: 1s;
             color: darkblue;
             background: var(--maingradient);
-        }
+        } */
 
         .container .pt-1 .btn {
-            border-radius: 30rem;
+            border-radius: 10rem;
             background: var(--bggradient);
             color: white;
         }
@@ -93,84 +93,210 @@
             justify-content: center;
             font-family: var(--Acme);
         }
+
+        html,
+        body {
+            height: 100%;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-image: url("{% static 'assets/backgroundImageHome.jpg' %}"); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            justify-content: space-around;
+        }
+        .content {
+            flex: 1;
+        }
+
+        .footer {
+            height: 130px;
+            background-color: black;
+            padding-top: 15px;
+            margin-bottom: 0%;
+        }
+
+        .item {
+            background-color: rgb(16, 121, 159);
+            margin-left: 20px;
+            border-radius: 40px;
+            width: 150px;
+            text-align: center;
+            font-size: larger;
+            font-weight: 700;
+            color: black;
+        }
+
+        .navbar {
+            background-color: black;
+        }
+
+        .divi {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form_email {
+            width: 250px;
+            height: 30px;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+            padding: 20px;
+        }
+
+        .form_button {
+            width: 100px;
+            height: 40px;
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            background-color: rgb(16, 121, 159);
+            color: white;
+            font-weight: 700;
+        }
+
+        .image_bg {
+            width: 100%;
+        }
     </style>
 </head>
 
-<body style="background:linear-gradient(to bottom, #76f1f1, #11349c);">
-    <div class="container py-5" style="overflow-y: hidden;">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col col-xl-10 ">
-                <div class="card" style="border-radius: 1rem;">
-                    <div class="row g-0">
-                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+<body style="background:beige">
+    <div class="wrapper">
+        <!-- Navbar -->
+        {% include 'header.html' %}
+
+        <!-- Center Content -->
+        <div class="content" style="display:flex;justify-content: center;align-items: center;">
+            <div class="container mt-5" style="display:flex;justify-content: center;align-items: center;background-color: white;">
+                <div class="row">
+                    <div style="display:flex;justify-content: center;align-items: center;">
+                        <h2>Sign Up</h2>
+                </div>
+                        <div style="display:flex;justify-content:center;align-items: center;">
+                            <h3>Welcome to Lamp Education and Charitable Trust</h3>
                         </div>
-                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                            <div class="card-body p-4 p-lg-5 text-black">
-                                <form action="." method="POST">
-                                    <div class="d-flex align-items-center mb-3 pb-1">
-                                        <img src="{% static 'assets/logo.png' %}" alt="Logo" width="90em"
-                                            height="70em">
-                                        <span class="h2 fw-bold mb-0">SIGN UP</span>
-                                    </div>
-                                    <h5 class="mt-2 text" style="text-align: center;">Welcome to Lamp Education</h5><br>
+                
+                    <div class="content" style="display:flex;justify-content: center;align-items: center;">
+                        <div class="container mt-5" style="display:flex;justify-content: center;align-items: center;">
+                            <div>
+                                <div class="col-md-15">
                                     <div class="form-outline mb-4">
-                                        <i class="fa fa-user icon fa-2x"></i>
-                                        <input type="text" id="form2Example17" class="form-control form-control-lg"
-                                            placeholder="Name" name="name"  />
-                                        <!-- <label class="form-label" for="form2Example17">Enter User Name</label> -->
+                                        <!-- <label class="form-label" for="name">Name</label> -->
+                                        <input type="text" id="name" class="form-control form-control-lg" placeholder="Enter your name" name="name" required=""/>
                                     </div>
-
+                    
                                     <div class="form-outline mb-4">
-                                        <i class="fa fa-envelope icon fa-2x"></i>
-                                        <input type="email" id="form2Example18" class="form-control form-control-lg"
-                                            placeholder="Email" name="email"  />
-                                        <!-- <label class="form-label" for="form2Example18">Enter Email</label> -->
+                                        <!-- <label class="form-label" for="email">Email</label> -->
+                                        <input type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email" name="email" required=""/>
                                     </div>
-                                    
+                    
                                     <div class="form-outline mb-4">
-                                        <i class="fa fa-user icon fa-2x"></i>
-                                        <input type="text" id="form2Example19" class="form-control form-control-lg"
-                                            placeholder="Username" name="username" />
-                                        <!-- <label class="form-label" for="form2Example17">Enter User Name</label> -->
+                                        <!-- <label class="form-label" for="username">Username</label> -->
+                                        <input type="text" id="username" class="form-control form-control-lg" placeholder="Enter your username" name="username" required=""/>
                                     </div>
-
+                    
+                    
                                     <div class="form-outline mb-4">
-                                        <i class="fa fa-key icon fa-2x"></i>
-                                        <input type="password" id="form2Example27"
-                                            class="form-control form-control-lg" placeholder="Password" name="pass" autocomplete="current-password"
-                                            />
-                                        <!-- <label class="form-label" for="form2Example27"> Enter Password</label> -->
+                                        <!-- <label class="form-label" for="password">Password</label> -->
+                                        <input type="password" id="password" class="form-control form-control-lg" placeholder="Enter your password" name="password" required=""/>
                                     </div>
-
+                    
                                     <div class="form-outline mb-4">
-                                        <i class="fa fa-phone icon fa-2x"></i>
-                                        <input type="tel" id="form2Example20" class="form-control form-control-lg"
-                                            placeholder="Phone Number" name="phone" />
-                                        <!-- <label class="form-label" for="form2Example19">Enter Phone Number</label> -->
+                                        <!-- <label class="form-label" for="phoneNumber">Phone Number</label> -->
+                                        <input type="text" id="phoneNumber" class="form-control form-control-lg" placeholder="Enter your phone number" name="phoneNumber" required=""/>
                                     </div>
-
-                                    
-                                    <div id="flash"
-                                        style="color: red;font-size: 1.1rem;text-align:center;font-family: var(--Snigle-font);">
-
+                                </div>
+                    
+                                <!-- <div class="col-md-6"> -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="educationLevel">Areas of Expertise</label>
+                                        <select class="form-select form-control-lg" id="educationLevel" name="education" required="">
+                                            <option value="" disabled selected>Select area of experties</option>
+                                            <option value="educated">Events</option>
+                                            <option value="uneducated">Newsletter production</option>
+                                            <option value="educated">Website development and IT</option>
+                                            <option value="uneducated">Content writing</option>
+                                            <option value="educated">Social Media Marketing</option>
+                                            <option value="uneducated">Graphic designer</option>
+                                        </select>
                                     </div>
-
-                                    
-                                    
                                     <div class="pt-1 text-center">
                                         <button class="btn  btn-info btn-rounded btn-lg px-5 py-2" type="submit">Register</button>
                                     </div>
-                                    <!-- <div class="text-center mt-2">
-                                        <h5 class="text-center mt-2"><a href="">Forgot Password?</a></h5>
-                                    </div> -->
-                                </form>
+                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
+                    
+                    <script>
+                        document.getElementById('educationLevel').addEventListener('change', function() {
+                            var selectedValue = this.value;
+                            var educatedOptionsContainer = document.getElementById('educatedOptionsContainer');
+                            var uneducatedOptionsContainer = document.getElementById('uneducatedOptionsContainer');
+                            var educatedCheckboxes = educatedOptionsContainer.querySelectorAll('input[type="checkbox"]');
+                            var uneducatedCheckboxes = uneducatedOptionsContainer.querySelectorAll('input[type="checkbox"]');
+                    
+                            if (selectedValue === 'educated') {
+                                educatedOptionsContainer.style.display = 'block';
+                                uneducatedOptionsContainer.style.display = 'none';
+                                educatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.disabled = false;
+                                });
+                                uneducatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.checked = false;
+                                    checkbox.disabled = true;
+                                });
+                            } else if (selectedValue === 'uneducated') {
+                                educatedOptionsContainer.style.display = 'none';
+                                uneducatedOptionsContainer.style.display = 'block';
+                                educatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.checked = false;
+                                    checkbox.disabled = true;
+                                });
+                                uneducatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.disabled = false;
+                                });
+                            } else {
+                                educatedOptionsContainer.style.display = 'none';
+                                uneducatedOptionsContainer.style.display = 'none';
+                                educatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.checked = false;
+                                    checkbox.disabled = true;
+                                });
+                                uneducatedCheckboxes.forEach(function(checkbox) {
+                                    checkbox.checked = false;
+                                    checkbox.disabled = true;
+                                });
+                            }
+                        });
+                    </script>
+                    
+
                 </div>
             </div>
         </div>
+        {% include 'footer.html' %}
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>

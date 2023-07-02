@@ -144,9 +144,13 @@
                         
                         <div class="card" style="width: 13rem;">
                             <img src="{% static 'assets/study.jpeg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">View uploaed videos</h5>
-                                <p class="card-text">view the videos</p>
+                            <h5 class="card-title" onclick = "alertFns()">View uploaed videos</h5>
+                            <p class="card-text" onclick = "alertFns()">view the videos</p>
+                            <script>
+                                function alertFns() {
+                                  alert("Video Uploaded");
+                                }
+                                </script>
                                 
                             </div>
                         </div>
