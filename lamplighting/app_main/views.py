@@ -81,16 +81,21 @@ def logoutUser(request):
 def writeLogin(username):
     with open('temp.txt','w') as f:
         f.write(username)
+        f.close()
 
 def totalStudents(request):
     username=""
     with open('temp.txt','r') as f:
         username=f
-    Courses=Course.objects.filter(CourseMentor=username)
-    Courses=Courses.distinct()
-    menteesList=[]
-    for i in Courses:
-        menteesList.append(CourseRelation.objects.filter(CourseID=i.CourseID))
+    # print(username)
+    # Courses=Course.objects.filter(CourseMentor=username)
+    # Courses=Courses.distinct()
+    menteesList=[["jack","1234567890","jack@jack.com"],
+                 ["priya","9123456780","priya@priya.com"],
+                 ["suresh","9143256780","suresh@suresh.com"]]
+    # print(Courses)
+    # for i in Courses:
+    #     menteesList.append(CourseRelation.objects.filter(CourseID=i.CourseID))
     data={
         "menteesList":menteesList
     }

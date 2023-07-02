@@ -15,7 +15,7 @@
             position: relative;
         }
 
-        body::before {
+        /* body::before {
             content: "";
             position: absolute;
             top: 0;
@@ -27,6 +27,10 @@
             background-size: cover;
             opacity: 0.7;
             z-index: -1;
+        } */
+
+        body{
+            background-color: beige;
         }
 
         .wrapper {
@@ -113,33 +117,18 @@
                           </tr>
                         </thead>
                         <tbody>
-                            {% for item in menteesList %}
-                            <li>{{ item }}</li>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>item</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>Ramesh</td>
+                                <td>9123456780</td>
+                                <td>ramesh@ramesh.com</td>
                             </tr>
-                            {% endfor %}
-
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Suresh</td>
+                                <td>9143256780</td>
+                                <td>suresh@suresh.com</td>
+                            </tr>
                         </tbody>
                       </table>
                     

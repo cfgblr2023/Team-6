@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 tempMentor
-=======
-testMentee
->>>>>>> a79fd8390304be414db0bd4b325b01cd61416776

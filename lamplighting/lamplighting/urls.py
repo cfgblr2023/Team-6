@@ -29,6 +29,7 @@ urlpatterns = [
     path('registerMentee/',view=registerMentee),
     path('registerMentor/',view=registerMentor),
     path('mentor/',view=mentor),
+    path('mentor/totalStudents',view=totalStudents),
     path('mentee/',view=mentee),
     path('adminUser/',view=adminUser),
     path('donate/',view=donate),
