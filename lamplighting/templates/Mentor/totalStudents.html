@@ -103,15 +103,46 @@
         <!-- Center Content -->
         <div class="content">
             <div class="container mt-5">
-                <div class="row" style="display: flex; justify-content: center; align-items: end;">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in menteesList %}
+                            <li>{{ item }}</li>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>item</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            {% endfor %}
 
-                    <h1 class="on_image">
-                        <p style="text-align: right;"><pre>                                   ERADICATE
-                                    POVERTY
-                                    THROUGH
-                            <span style="font-size: 60px; font-weight: 700; text-align: right;">EDUCATION</span>
-                        </pre></p>   
-                    </h1>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    
 
                 </div>
             </div>

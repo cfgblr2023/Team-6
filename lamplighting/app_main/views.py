@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .models import *
+import nexmo
 
 # Create your views here.
 
@@ -31,8 +32,12 @@ def mentor(request):
     username=""
     with open("temp.txt") as f:
         username=f.read()
-    numberOfCourses=len(AvaiCourse.objects.filter(CourseMentor=username))
-    numberOfMentees=len(AvaiCourse.objects.filter(CourseMentor=username))
+    Courses=Course.objects.filter(CourseMentor=username)
+    numberOfCourses=len(Courses)
+    Courses=Courses.distinct()
+    numberOfMentees=0
+    for i in Courses:
+        numberOfMentees+=len(CourseRelation.objects.filter(CourseID=i.CourseID))
     data={
         "numberOfCourses":numberOfCourses,
         "numberOfMentees":numberOfMentees
@@ -40,7 +45,13 @@ def mentor(request):
     return render(request,"Mentor/mentorbase.html",data)
 
 def mentee(request):
-    return render(request,"mentee/mentee.html")
+    username=""
+    with open("temp.txt") as f:
+        username=f.read()
+    data={
+        "username":username,
+    }
+    return render(request,"mentee/mentee.html",data)
 
 def adminUser(request):
     return render(request,"admin/adminbase.html")
@@ -71,12 +82,28 @@ def writeLogin(username):
     with open('temp.txt','w') as f:
         f.write(username)
 
+def totalStudents(request):
+    username=""
+    with open('temp.txt','r') as f:
+        username=f
+    Courses=Course.objects.filter(CourseMentor=username)
+    Courses=Courses.distinct()
+    menteesList=[]
+    for i in Courses:
+        menteesList.append(CourseRelation.objects.filter(CourseID=i.CourseID))
+    data={
+        "menteesList":menteesList
+    }
+    return render(request,'Mentor/totalStudents.html',data)
+    
+
 
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         writeLogin(username)
+        print(username)
         user = authenticate(request, username=username, password=password)
         try:
             user = EndUser.objects.get(Username=username, Password=password)
@@ -95,3 +122,33 @@ def login_view(request):
 
             # messages.error(request, 'Invalid username or password.')
 
+    def sndSmsView():
+        api_key = ""
+        with open("api-key.txt", "a") as f:
+            api_key += f.read()
+
+        api_secret = ""
+        with open("api-secret.txt", "a") as f:
+            api_secret += f.read()
+
+        client = nexmo.Client(key=api_key, secret=api_secret)
+        phone_numbers = ['+919007088779']
+        def send_sms_notification(phone_number):
+            from_number = '+918904194092'  # Replace with your Nexmo phone number
+
+        for phone_number in phone_numbers:
+            send_sms_notification(phone_number)
+
+        def send_sms_notification(phone_number):
+            from_number = '+918904194092'  # Replace with your Nexmo phone number
+
+            response = client.send_message({
+                'from': from_number,
+                'to': phone_number,
+                'text': 'Hi from Py'
+            })
+
+            if response['messages'][0]['status'] == '0':
+                print(f"SMS sent to {phone_number}. Message ID: {response['messages'][0]['message-id']}")
+            else:
+                print(f"Failed to send SMS to {phone_number}. Error: {response['messages'][0]['error-text']}")
