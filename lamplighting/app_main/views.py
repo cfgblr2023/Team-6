@@ -73,6 +73,21 @@ def writeLogin(username):
     with open('temp.txt','w') as f:
         f.write(username)
 
+def totalStudents(request):
+    username=""
+    with open('temp.txt','r') as f:
+        username=f
+    Courses=Course.objects.filter(CourseMentor=username)
+    Courses=Courses.distinct()
+    menteesList=[]
+    for i in Courses:
+        menteesList.append(CourseRelation.objects.filter(CourseID=i.CourseID))
+    data={
+        "menteesList":menteesList
+    }
+    return render(request,'Mentor/totalStudents.html',data)
+    
+
 
 def login_view(request):
     if request.method == 'POST':

@@ -122,6 +122,8 @@
                     <div class="container row p-5 fill" style="justify-content: space-around;">
 
                         <div class="card" style="width: 13rem;">
+                            <a href="totalCourses" style="text-decoration: none; color: inherit ; font-weight: inherit; ">
+
                             <div class="fill">
                                 <img src="{% static 'assets/courses.jpg' %}" class="card-img-top"  alt="...">
 
@@ -131,17 +133,22 @@
                                 <p class="card-text">{{numberOfCourses}}</p>
                                 <!-- <a href="/loginAdmin" class="btn btn-primary">Login</a> -->
                             </div>
+                            </a>
                         </div>
                         <div class="card" style="width: 13rem;">
-                            <div class="fill">
-                                <img src="{% static 'assets/Students.jpg' %}" class="card-img-top"  alt="...">
-
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Total Students</h5>
-                                <p class="card-text">{{numberOfMentees}}</p>
-                                <!-- <a href="/loginMentor" class="btn btn-primary">Login</a> -->
-                            </div>
+                            <a href="totalCourses" style="text-decoration: none; color: inherit ; font-weight: inherit; ">
+                                <div>
+                                    <div class="fill">
+                                        <img src="{% static 'assets/Students.jpg' %}" class="card-img-top"  alt="...">
+                                        
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Students</h5>
+                                        <p class="card-text">{{numberOfMentees}}</p>
+                                        <!-- <a href="/loginMentor" class="btn btn-primary">Login</a> -->
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                         
                         
