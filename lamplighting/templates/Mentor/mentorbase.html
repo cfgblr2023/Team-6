@@ -88,7 +88,20 @@
             color: white;
             font-weight: 700;
         }
-
+        .fill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            }
+            .fill img {
+                flex-shrink: 0;
+                min-width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+                height: 150px;
+                width: 150px;
+            }
         .image_bg {
             width: 100%;
         }
@@ -106,10 +119,13 @@
                 <div class="row">
 
                     <!-- Center Content -->
-                    <div class="container row align-items-center p-5">
+                    <div class="container row p-5 fill" style="justify-content: space-around;">
 
                         <div class="card" style="width: 13rem;">
-                            <img src="{% static 'assets/courses.jpg' %}" class="card-img-top" alt="...">
+                            <div class="fill">
+                                <img src="{% static 'assets/courses.jpg' %}" class="card-img-top"  alt="...">
+
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Total courses</h5>
                                 <p class="card-text">{{numberOfCourses}}</p>
@@ -117,40 +133,34 @@
                             </div>
                         </div>
                         <div class="card" style="width: 13rem;">
-                            <img src="{% static 'assets/Students.jpg' %}" class="card-img-top" alt="...">
+                            <div class="fill">
+                                <img src="{% static 'assets/Students.jpg' %}" class="card-img-top"  alt="...">
+
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Total Students</h5>
                                 <p class="card-text">{{numberOfMentees}}</p>
                                 <!-- <a href="/loginMentor" class="btn btn-primary">Login</a> -->
                             </div>
                         </div>
-                        <div class="card" style="width: 13rem;">
-                            <img src="{% static 'assets/upload.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Upload Video</h5>
-                                <!-- <p class="card-text">Upload new video for courses</p> -->
-                                <a href="/loginMentee" class="btn btn-primary">Upload</a>
-                            </div>
-                        </div>
+                        
                         
                         <div class="card" style="width: 13rem;">
-                            <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top" alt="...">
+                            <div class="fill">
+                                <img src="{% static 'assets/menteeLoginCardImage.png' %}" class="card-img-top"  alt="...">
+
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Upload Study material</h5>
-                                <!-- <p class="card-text">Upload the study material</p> -->
                                 <a href="/loginMentee" class="btn btn-primary">Upload</a>
                             </div>
                         </div>
                         
                         <div class="card" style="width: 13rem;">
                             <img src="{% static 'assets/study.jpeg' %}" class="card-img-top" alt="...">
-                            <h5 class="card-title" onclick = "alertFns()">View uploaed videos</h5>
-                            <p class="card-text" onclick = "alertFns()">view the videos</p>
-                            <script>
-                                function alertFns() {
-                                  alert("Video Uploaded");
-                                }
-                                </script>
+                            <div class="card-body">
+                                <h5 class="card-title">View uploaed videos</h5>
+                                <p class="card-text">view the videos</p>
                                 
                             </div>
                         </div>

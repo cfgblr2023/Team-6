@@ -31,8 +31,12 @@ def mentor(request):
     username=""
     with open("temp.txt") as f:
         username=f.read()
-    numberOfCourses=len(Course.objects.filter(CourseMentor=username))
-    numberOfMentees=len(Course.objects.filter(CourseMentor=username))
+    Courses=Course.objects.filter(CourseMentor=username)
+    numberOfCourses=len(Courses)
+    Courses=Courses.distinct()
+    numberOfMentees=0
+    for i in Courses:
+        numberOfMentees+=len(CourseRelation.objects.filter(CourseID=i.CourseID))
     data={
         "numberOfCourses":numberOfCourses,
         "numberOfMentees":numberOfMentees
@@ -40,7 +44,13 @@ def mentor(request):
     return render(request,"Mentor/mentorbase.html",data)
 
 def mentee(request):
-    return render(request,"mentee/mentee.html")
+    username=""
+    with open("temp.txt") as f:
+        username=f.read()
+    data={
+        "username":username,
+    }
+    return render(request,"mentee/mentee.html",data)
 
 def adminUser(request):
     return render(request,"admin/adminbase.html")
@@ -69,6 +79,7 @@ def login_view(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         writeLogin(username)
+        print(username)
         user = authenticate(request, username=username, password=password)
         try:
             user = EndUser.objects.get(Username=username, Password=password)
