@@ -34,7 +34,10 @@ urlpatterns = [
     path('donate/',view=donate),
     path('jobPosting',view=jobPosting),
     path('logoutUser/',view=logoutUser),
-    path('video/',view=video)
+    path('video/',view=video),
+        path('adminMentor/',view=adminMentor),
+    path('adminMentee/',view=adminMentee),
+    path('adminCourse/',view=adminCourse)
     # path('adminbase/',view=adminbase)
 
 ]

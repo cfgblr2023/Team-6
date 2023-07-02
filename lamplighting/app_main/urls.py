@@ -20,5 +20,8 @@ urlpatterns = [
     path('jobPosting/',view=jobPosting),
     path('video/',view=video),
     path('logoutUser/',view=logoutUser),
+    path('adminMentor/',view=adminMentor),
+    path('adminMentee/',view=adminMentee),
+    path('adminCourse/',view=adminCourse)
     # path('adminbase/',view=adminbase)
 ]

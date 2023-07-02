@@ -31,8 +31,8 @@ def mentor(request):
     username=""
     with open("temp.txt") as f:
         username=f.read()
-    numberOfCourses=len(Course.objects.filter(CourseMentor=username))
-    numberOfMentees=len(Course.objects.filter(CourseMentor=username))
+    numberOfCourses=len(AvaiCourse.objects.filter(CourseMentor=username))
+    numberOfMentees=len(AvaiCourse.objects.filter(CourseMentor=username))
     data={
         "numberOfCourses":numberOfCourses,
         "numberOfMentees":numberOfMentees
@@ -44,6 +44,14 @@ def mentee(request):
 
 def adminUser(request):
     return render(request,"admin/adminbase.html")
+
+def adminMentor(request):
+    return render(request,"admin/admin_mentor.html")
+def adminMentee(request):
+    return render(request,"admin/admin_mentee.html")
+def adminCourse(request):
+    return render(request,"admin/admin_course.html")
+
 
 def donate(request):
     return render(request,"")
