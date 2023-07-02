@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'lamplighting.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_old.db',
+        'NAME': BASE_DIR / 'db.db',
     }
 }
 

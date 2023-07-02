@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .models import *
+import nexmo
 
 # Create your views here.
 
@@ -113,3 +114,33 @@ def login_view(request):
 
             # messages.error(request, 'Invalid username or password.')
 
+    def sndSmsView():
+        api_key = ""
+        with open("api-key.txt", "a") as f:
+            api_key += f.read()
+
+        api_secret = ""
+        with open("api-secret.txt", "a") as f:
+            api_secret += f.read()
+
+        client = nexmo.Client(key=api_key, secret=api_secret)
+        phone_numbers = ['+919007088779']
+        def send_sms_notification(phone_number):
+            from_number = '+918904194092'  # Replace with your Nexmo phone number
+
+        for phone_number in phone_numbers:
+            send_sms_notification(phone_number)
+
+        def send_sms_notification(phone_number):
+            from_number = '+918904194092'  # Replace with your Nexmo phone number
+
+            response = client.send_message({
+                'from': from_number,
+                'to': phone_number,
+                'text': 'Hi from Py'
+            })
+
+            if response['messages'][0]['status'] == '0':
+                print(f"SMS sent to {phone_number}. Message ID: {response['messages'][0]['message-id']}")
+            else:
+                print(f"Failed to send SMS to {phone_number}. Error: {response['messages'][0]['error-text']}")
