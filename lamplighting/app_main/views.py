@@ -34,7 +34,8 @@ def mentor(request):
     numberOfCourses=len(Course.objects.filter(CourseMentor=username))
     numberOfMentees=len(Course.objects.filter(CourseMentor=username))
     data={
-        "numberOfCourses":numberOfCourses
+        "numberOfCourses":numberOfCourses,
+        "numberOfMentees":numberOfMentees
     }
     return render(request,"Mentor/mentorbase.html",data)
 
