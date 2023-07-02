@@ -18,6 +18,7 @@ urlpatterns = [
     path('adminUser/',view=adminUser),
     path('donate/',view=donate),
     path('jobPosting/',view=jobPosting),
+    path('video/',view=video),
     path('logoutUser/',view=logoutUser),
     # path('adminbase/',view=adminbase)
 ]
